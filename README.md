@@ -68,6 +68,91 @@ Le mecanime utilise par GIT est appele un empreinte SHA-1. c'est une chaine de c
     ```
 
 #### Avec GIT très peu d'operations sont destructives
+ 
+Git a troid état principaux dans lesquels peuvent se trouver vos fichiers :
+- Working directory
+- Staring area
+- .git directory (Repository)
+ 
+### Le première utilisation de Git
+Git possède un un outil : Git config.
+Il permet de configurer les paramètres de Git sur notre système.  Ils peuvent être stocké dans 3 ednroits différents :
+- [chemin]/etc/config
+- fichier ~/.gitconfig
+- fichier config dans le répertoire Git d'un dépôt en cours d'utilisation (specifique au dépôt en local) donc les valeurs .gi/config écrasent celles de /etc/config
+ 
+Sur OS Windows, Git recherché fichier `.gitconfig`.
+Le fichier ne peut être modifié qu'avec la commande `git config -f` en tant qu'administrateur.
+ 
+#### Pour en savoir plus, entrer la commande :
+```sh
+git config --list --show-origin
+```
+#### Configurez son identité
+```sh
+git config --global user.name "JohnDoe"
+git config --global user.email "mon@mail.com"
+```
+#### VIM
+i -> pour passer en mode instertion
+echap -> pour sortie dans le mode dans lequel on se trouve 
+:wq -> pour quitter et sauvegarder (w pour write et q quitter) 
+:q! -> pour quitter sans sauvegarder
+ 
+On doit passer le nom de la branch principal de "master à "main" pour remplacer la notion de mâitre-esclave.
+```sh
+git config --global init.defaultBranch main
+```
+ 
+#### Vérifier ses paramètres
+```sh
+git config --list
+git config user.name
+```
+ 
+#### Obtenir à l'aide
+```sh
+git help config
+```
+ 
+##### Support github
+Pour créer un token, aller dans les paramètres de son compte, puis dans Developer Settings, puis dans Personal access tokens.
+et Prendre le tokens (classic) et non la Bêta.
 
+#### les commandes de base de Git
 
+##### Initialiser un dépôt
+```sh
+git init
+```
 
+##### Ajouter des fichiers
+```sh
+git add <nom du fichier>
+git add . (pour ajouter tous les fichiers)
+```
+
+##### Commiter des fichiers
+```sh
+git commit -m "message"
+```
+
+##### Voir l'historique des commits
+```sh
+git log
+```
+
+##### Voir les modifications
+```sh
+git diff
+```
+
+##### Voir les modifications dans le staging area
+```sh
+git diff --staged
+```
+
+##### Annuler les modifications
+```sh
+git checkout -- <nom du fichier>
+```
