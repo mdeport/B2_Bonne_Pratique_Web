@@ -152,7 +152,62 @@ git diff
 git diff --staged
 ```
 
-##### Annuler les modifications
+##### changer de branche
 ```sh
 git checkout -- <nom du fichier>
 ```
+
+#### créer une branche
+```sh
+git branch <nom de la branche>
+```
+
+#### pour cloner un depot
+```sh
+git clone <url du depot>
+```
+
+#### ignorer des fichier
+
+Pour ignorer des fichiers, il faut créer un fichier .gitignore à la racine du projet.
+le fichier .gitignore agit de façon récursive sur les sous-dossiers.
+
+
+## TP 1 :
+
+### Tâche 1 :
+la commande pour cloné le depot de vs code est : 
+ 
+```sh
+git clone git@github.com:microsoft/vscode.git
+```
+
+### Tâche 2 :
+En examinent l'historique des commits
+la commande est : 
+```sh
+git log
+```
+En identifient les types de modifications il y a :
+- GIT
+- debt - ensure
+- Fix
+- update
+- chore
+
+### Tâche 3 :
+
+ajouter une image dans le fichie README.md depuis le dossier image.
+ la commande pour créer la branch est :
+```sh
+git branch Modif_README_TACHE3    
+```
+pour aller sur la branch :
+```sh
+git checkout Modif_README_TACHE3
+```
+et pour commmit une les modif faites :
+```sh
+git commit -m "changement du fichier README"
+```
+
