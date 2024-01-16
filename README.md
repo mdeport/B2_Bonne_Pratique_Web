@@ -69,41 +69,74 @@ Le mecanime utilise par GIT est appele un empreinte SHA-1. c'est une chaine de c
 
 #### Avec GIT très peu d'operations sont destructives
  
-Git a troid état principaux dans lesquels peuvent se trouver vos fichiers :
-- Working directory
-- Staring area
-- .git directory (Repository)
- 
-### Le première utilisation de Git
-Git possède un un outil : Git config.
-Il permet de configurer les paramètres de Git sur notre système.  Ils peuvent être stocké dans 3 ednroits différents :
-- [chemin]/etc/config
-- fichier ~/.gitconfig
-- fichier config dans le répertoire Git d'un dépôt en cours d'utilisation (specifique au dépôt en local) donc les valeurs .gi/config écrasent celles de /etc/config
- 
-Sur OS Windows, Git recherché fichier `.gitconfig`.
-Le fichier ne peut être modifié qu'avec la commande `git config -f` en tant qu'administrateur.
- 
-#### Pour en savoir plus, entrer la commande :
+#### GIT a trois états principaux dans lesquels peuvent se trouver vos fichiers : 
+
+Qui sont : 
+
+- **Modifié** : le fichier a été modifié mais pas encore sauvegardé.
+- **Indexé** : le fichier a été modifié et sauvegardé.
+- **Validé** : le fichier a été modifié, sauvegardé et validé dans le dépôt local.
+
+## Présentations des Commandes de GIT
+
+Git possede un poutil appele Git config qui permet de configurer les parametres de GIT. Ces parametres peuvent etre stockes dans trois endroits differents :
+
+- **[chemin] /etc/gitconfig** : contient les valeurs appliquees a tous les utilisateurs et tous les depots. Si vous passez l'option --system a git config, il lit et ecrit dans ce fichier specifique.
+
+- **Fichier ~/.gitconfig** : specifique a votre utilisateur. Vous pouvez forcer git a lire et ecrire dans ce fichier en passant l'option --global.
+
+- **Fichier config** : dans le repertoire git (c'est a dire .git/config) du depot en cours d'utilisation. Chaque niveau surcharge les valeurs du niveau precedent, donc les valeurs de .git/config surchargent celles de /etc/gitconfig.
+
+Sur les systeme windows, git cherche les fichiers .gitconfig dans le repertoire $HOME (C:\Users\$USER). 
+
+
+pour en savoir plus entré la commande : 
+
 ```sh
-git config --list --show-origin
+git config --list --show--origin
 ```
-#### Configurez son identité
+
+#### Configuration de l'identité
+
+La premiere chose a faire apres l'installation de GIT est de configurer votre identité. C'est a dire votre nom et votre adresse mail. Cela est important car chaque commit utilise cette information, et elle est immuablement ancrée dans les commits que vous commencez a creer :
+
 ```sh
-git config --global user.name "JohnDoe"
-git config --global user.email "mon@mail.com"
+git config --global user.name "John Doe"
+git config --global user.email 
 ```
-#### VIM
-i -> pour passer en mode instertion
-echap -> pour sortie dans le mode dans lequel on se trouve 
-:wq -> pour quitter et sauvegarder (w pour write et q quitter) 
-:q! -> pour quitter sans sauvegarder
- 
-On doit passer le nom de la branch principal de "master à "main" pour remplacer la notion de mâitre-esclave.
+
+#### VIM 
+i -> in sertion 
+echap -> sortir du mode insertion
+wq -> enregistrer et quitter
+
+#### Votre editeur de texte
+
+```sh
+git config --global core.editor emacs
+```
+
+#### Le nom de branch par defaut
+
 ```sh
 git config --global init.defaultBranch main
 ```
- 
+
+#### vérifier vos paramètres
+
+```sh   
+git config --list
+```
+```sh  
+git config user.name
+```
+les doc sont en anglais 
+
+Pour ne plus etre dans un depot git : 
+    
+    ```sh
+    rm -rf .git/
+    ```
 #### Vérifier ses paramètres
 ```sh
 git config --list
