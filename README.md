@@ -244,3 +244,4 @@ Les revue de codes sont faites sur les branches de fonctionnalités et de fix de
 Un conflit a lieu lorsque deux branches différentes ont modifié la même partie du même fichier, ou si un fichier a été supprimé dans une branche alors qu'il était modifié dans une autre.
 
 si on veut resoudre le conflit on choisit la version que l'on veut garder et on fait un commit.
+test du pull request
