@@ -211,3 +211,36 @@ et pour commmit une les modif faites :
 git commit -m "changement du fichier README"
 ```
 
+## TP 2 :
+### Tâche 1 :
+
+En regardant l'historique des commmits,
+il y a beaucoup de nommage en anglais, et des demande de Merge pull request.
+
+### Tâche 2 :
+
+en regardant dans le code il y a des commentaire en anglais pour expliquer le code. les variable sont en anglais et il y a une bonne indentation.
+
+## TP 3 :
+### Tâche 1 :
+
+j'ai créer la branch modif 1 et modif 2 puis modifier le chifier readme et fait un commit pour chaque branch.
+au moment de les fusionner j'ai eu un conflit car j'ai modifier le meme fichier sur les deux branch.
+![alt text](image/Capture%20d’écran%202024-01-16%20à%2009.53.50.png)
+
+### Tâche 2 :
+
+pour resoudre le conflit j'ai choisit de garde les modif de la branch modif 2 et j'ai fait un commit.sa a donc resolue le conflit.
+
+
+## TP 4 :
+
+### Tâche 1 :
+les revue de codes sont fais par les autre membre de sont equipe.
+Les revue de codes sont faites sur les branches de fonctionnalités et de fix de BUG.
+
+#### Résoudre les conflit avec GIT
+
+Un conflit a lieu lorsque deux branches différentes ont modifié la même partie du même fichier, ou si un fichier a été supprimé dans une branche alors qu'il était modifié dans une autre.
+
+si on veut resoudre le conflit on choisit la version que l'on veut garder et on fait un commit.
