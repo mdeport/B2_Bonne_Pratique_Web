@@ -281,3 +281,44 @@ la pull request a bien été fais puis merge sur main
 Un conflit a lieu lorsque deux branches différentes ont modifié la même partie du même fichier, ou si un fichier a été supprimé dans une branche alors qu'il était modifié dans une autre.
 
 si on veut resoudre le conflit on choisit la version que l'on veut garder et on fait un commit.
+
+### 
+```sh
+git branch -a
+git branch --all
+```
+
+
+#### poousser des modifications
+
+```sh
+git push origin <nom de la branche>
+```
+
+#### créer et se mettre sur la branfche
+    
+    ```sh   
+    git checkout -b <nom de la branche>/<nom de la branche>
+    ```
+encore plus simple : 
+```sh
+git checkout --track <distant>/<nom de la branche>
+```
+
+plus simple 
+```sh
+git checkout <nom de la branche>
+```
+
+Afin de visualiser tout ça on peut utiliser la commande :
+```sh
+git branch-vv
+```
+
+#### rebaser notre travail
+
+avec GIT, il y a deux manière d'integrer les modification d'une branche dans une autre :
+- la fusion (merge)
+- le rebasage (rebase)
+
+
