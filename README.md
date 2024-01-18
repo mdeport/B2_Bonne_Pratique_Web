@@ -322,3 +322,22 @@ avec GIT, il y a deux manière d'integrer les modification d'une branche dans un
 - le rebasage (rebase)
 
 
+après un merge on obtient cela :
+```sh
+git checkout master
+
+git merge experiment
+```
+
+
+avec le rebase on aurait entré les commandes suivantes :
+```sh
+git checkout experiment
+
+git rebase master
+```
+#### Rebase or not REBASE ?
+
+la seul règle a respecter avec la commande 
+Rebase: ne jamis rebase des modifications qui ont été publiées sur un  serveur distant (push).
+
